@@ -1,493 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sitio web tributo a los álbumes del Cuarteto de Nos - Banda de rock uruguaya" />
-    <meta name="keywords" content="Cuarteto de Nos, rock uruguayo, música, álbumes, Raro, Bipolar, Porfiado" />
-    <title>Álbumes del Cuarteto de Nos | Sitio Tributo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuarteto de Nos - Fan Page Completa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      /* Estilos personalizados */
-      :root {
-        --primary-color: #f39c12;
-        --secondary-color: #2c3e50;
-        --accent-color: #ecf0f1;
-        --dark-bg: #1a1a2e;
-        --card-bg: #16213e;
-      }
-
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-        min-height: 100vh;
-      }
-
-      /* Hero Section */
-      .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                    url('images/Rojo\ 700\ x\ 400.jpg');
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 100px 0;
-        text-align: center;
-        margin-top: 56px;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        border-bottom: 3px solid var(--primary-color);
-      }
-
-      .hero-section h1 {
-        font-size: 3rem;
-        font-weight: 700;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        margin-bottom: 1rem;
-      }
-
-      .hero-section p {
-        font-size: 1.3rem;
-        opacity: 0.9;
-      }
-
-      /* Album Cards */
-      .album-card {
-        transition: all 0.3s ease;
-        border: none;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        background: var(--card-bg);
-      }
-
-      .album-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(243, 156, 18, 0.3);
-      }
-
-      .album-card img {
-        transition: transform 0.3s ease;
-        height: 300px;
-        object-fit: cover;
-      }
-
-      .album-card:hover img {
-        transform: scale(1.05);
-      }
-
-      .album-card .card-body {
-        padding: 1.5rem;
-      }
-
-      .album-card .card-title {
-        color: var(--primary-color);
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      .album-card .card-text {
-        color: #bdc3c7;
-        line-height: 1.6;
-        font-size: 0.95rem;
-      }
-
-      .btn-album {
-        background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-        border: none;
-        padding: 0.6rem 1.5rem;
-        border-radius: 25px;
-        transition: all 0.3s ease;
-        font-weight: 600;
-      }
-
-      .btn-album:hover {
-        background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(243, 156, 18, 0.5);
-      }
-
-      /* Pagination */
-      .pagination-container {
-        margin: 3rem 0;
-      }
-
-      .btn-page {
-        border: 2px solid var(--primary-color);
-        color: white;
-        background: transparent;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .btn-page:hover,
-      .btn-page.active {
-        background: var(--primary-color);
-        color: white;
-        transform: scale(1.1);
-      }
-
-      /* Footer */
-      footer {
-        background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
-        color: white;
-        padding: 2rem 0;
-        margin-top: 3rem;
-        border-top: 3px solid var(--primary-color);
-      }
-
-      .footer-social a {
-        color: white;
-        font-size: 1.5rem;
-        margin: 0 10px;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .footer-social a:hover {
-        color: var(--primary-color);
-        transform: scale(1.2);
-      }
-
-      /* Navbar improvements */
-      .navbar {
-        backdrop-filter: blur(10px);
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        border-bottom: 2px solid var(--primary-color);
-      }
-
-      .navbar-brand {
-        font-weight: 700;
-        font-size: 1.5rem;
-      }
-
-      .nav-link {
-        transition: all 0.3s ease;
-        font-weight: 500;
-      }
-
-      .nav-link:hover {
-        color: var(--primary-color) !important;
-        transform: translateX(5px);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .hero-section {
-          padding: 60px 0;
-        }
-
-        .hero-section h1 {
-          font-size: 2rem;
-        }
-
-        .album-card img {
-          height: 250px;
-        }
-      }
-
-      /* Loading animation */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .album-card {
-        animation: fadeInUp 0.6s ease forwards;
-      }
-
-      .album-card:nth-child(1) { animation-delay: 0.1s; }
-      .album-card:nth-child(2) { animation-delay: 0.2s; }
-      .album-card:nth-child(3) { animation-delay: 0.3s; }
-      .album-card:nth-child(4) { animation-delay: 0.4s; }
-      .album-card:nth-child(5) { animation-delay: 0.5s; }
-      .album-card:nth-child(6) { animation-delay: 0.6s; }
+        :root { --primary: #f39c12; --dark: #1a1a2e; --card: #16213e; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); color: #fff; }
+        .navbar { background: rgba(22,33,62,0.95) !important; border-bottom: 3px solid var(--primary); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/Rojo 700 x 400.jpg'); background-size: cover; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .section-title { color: var(--primary); text-align: center; margin: 3rem 0; font-size: 2.5rem; }
+        .card-custom { background: var(--card); border-radius: 15px; overflow: hidden; transition: transform 0.3s; border: 1px solid rgba(243,156,18,0.2); }
+        .card-custom:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(243,156,18,0.3); }
+        .btn-primary-custom { background: linear-gradient(45deg, #f39c12, #e67e22); border: none; }
+        footer { background: #0f3460; border-top: 3px solid var(--primary); padding: 2rem 0; margin-top: 3rem; }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; }
     </style>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <nav
-        class="navbar navbar-expand-lg bg-primary fixed-top"
-        data-bs-theme="dark"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">🎸 El Cuarteto de Nos</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://youtube.com/@cuartetodenos?si=gYz3Xf_FO-CjwmII">▶️ Canal Oficial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://cuartetodenos.com.uy">🌐 Web Oficial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://open.spotify.com/intl-es/artist/13JJKrUewC1CJYmIDXQNoH?dl_branch=1&nd=1&dlsi=f7deab8ec68244ad">🎵 Spotify</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/cuartetodenosok/">📷 Instagram</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.facebook.com/cuartetodenos">👍 Facebook</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://x.com/cuartetodenos">𝕏 X</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <!-- Hero Section -->
-      <section class="hero-section">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-          <h1>🎵 El Cuarteto de Nos</h1>
-          <p class="lead">Descubre la discografía de una de las bandas más innovadoras del rock latinoamericano</p>
+            <a class="navbar-brand" href="#"><i class="fas fa-guitar me-2"></i>Cuarteto de Nos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#integrantes">Integrantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#discografia">Discografía</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </div>
-      </section>
+    </nav>
 
-      <!-- Albums Section -->
-      <section class="container py-5">
-        <div class="row">
-          
-          <!-- Album: Raro -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card album-card h-100">
-              <img
-                src="images/Raro.jpg"
-                class="card-img-top"
-                alt="Portada del álbum Raro - 2006"
-                loading="lazy"
-              />
-              <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">RARO (2006)</h2>
-                <p class="card-text flex-grow-1">
-                  Undécimo álbum de estudio producido por Juan Campodónico. 
-                  Un trabajo conceptual que marcó un antes y después en la historia de la banda.
-                </p>
-                <div class="text-center mt-3">
-                  <a
-                    class="btn btn-album text-white"
-                    href="https://youtu.be/FTHnXLw6_Jk?list=RDFTHnXLw6_Jk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Escuchar álbum Raro en YouTube"
-                  >
-                    ▶️ Escuchar álbum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Album: Bipolar -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card album-card h-100">
-              <img
-                src="images/Bipolar.jpg"
-                class="card-img-top"
-                alt="Portada del álbum Bipolar - 2009"
-                loading="lazy"
-              />
-              <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">BIPOLAR (2009)</h2>
-                <p class="card-text flex-grow-1">
-                  Decimotercer álbum con once canciones inéditas y una nueva versión de "Me amo".
-                  Lanzado bajo el sello Warner Music.
-                </p>
-                <div class="text-center mt-3">
-                  <a
-                    class="btn btn-album text-white"
-                    href="https://youtu.be/YFRhjlpSnlA?list=RDYFRhjlpSnlA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Escuchar álbum Bipolar en YouTube"
-                  >
-                    ▶️ Escuchar álbum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Album: Porfiado -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card album-card h-100">
-              <img
-                src="images/Porfiado.jpg"
-                class="card-img-top"
-                alt="Portada del álbum Porfiado - 2012"
-                loading="lazy"
-              />
-              <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">PORFIADO (2012)</h2>
-                <p class="card-text flex-grow-1">
-                  Decimotercer álbum de estudio con doce canciones inéditas.
-                  Lanzado el 25 de abril de 2012 bajo Warner Music.
-                </p>
-                <div class="text-center mt-3">
-                  <a
-                    class="btn btn-album text-white"
-                    href="https://youtu.be/pzLlZrdC7Yw?list=RDpzLlZrdC7Yw"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Escuchar álbum Porfiado en YouTube"
-                  >
-                    ▶️ Escuchar álbum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Album: Habla tu espejo -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card album-card h-100">
-              <img
-                src="images/Habla tu espejo.jpg"
-                class="card-img-top"
-                alt="Portada del álbum Habla tu espejo - 2014"
-                loading="lazy"
-              />
-              <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">HABLA TU ESPEJO (2014)</h2>
-                <p class="card-text flex-grow-1">
-                  Lanzado el 6 de octubre de 2014. Incluye sencillos como "No llora", 
-                  "Cómo pasa el tiempo" y "Roberto".
-                </p>
-                <div class="text-center mt-3">
-                  <a
-                    class="btn btn-album text-white"
-                    href="https://youtu.be/KGamYi_m-_A?list=RDKGamYi_m-_A"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Escuchar álbum Habla tu espejo en YouTube"
-                  >
-                    ▶️ Escuchar álbum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Album: Apocalipsis Zombie -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card album-card h-100">
-              <img
-                src="images/Apocalipsis Zombie.jpg"
-                class="card-img-top"
-                alt="Portada del álbum Apocalipsis Zombie - 2017"
-                loading="lazy"
-              />
-              <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">APOCALIPSIS ZOMBIE (2017)</h2>
-                <p class="card-text flex-grow-1">
-                  Publicado el 12 de mayo de 2017. Primer disco producido por Cachorro López 
-                  bajo el sello Sony Music Argentina.
-                </p>
-                <div class="text-center mt-3">
-                  <a
-                    class="btn btn-album text-white"
-                    href="https://youtu.be/lU_7muhKSP0?list=RDlU_7muhKSP0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Escuchar álbum Apocalipsis Zombie en YouTube"
-                  >
-                    ▶️ Escuchar álbum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Album: Jueves -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card album-card h-100">
-              <img
-                src="images/Jueves.jpg"
-                class="card-img-top"
-                alt="Portada del álbum Jueves - 2019"
-                loading="lazy"
-              />
-              <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">JUEVES (2019)</h2>
-                <p class="card-text flex-grow-1">
-                  Publicado el 16 de agosto de 2019. Contiene nueve canciones en total 
-                  bajo el sello Sony Music Argentina.
-                </p>
-                <div class="text-center mt-3">
-                  <a
-                    class="btn btn-album text-white"
-                    href="https://youtu.be/MVwMrZVCg5I?list=RDMVwMrZVCg5I"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Escuchar álbum Jueves en YouTube"
-                  >
-                    ▶️ Escuchar álbum
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+    <section id="inicio" class="hero">
+        <div>
+            <h1 style="font-size: 4rem; color: var(--primary);">CUARTETO DE NOS</h1>
+            <p class="lead">Rock Uruguayo desde 1984</p>
+            <a href="#discografia" class="btn btn-primary-custom btn-lg px-4 py-2 rounded-pill">Ver Discografía</a>
         </div>
-      </section>
+    </section>
 
-      <!-- Pagination -->
-      <section class="pagination-container text-center">
-        <div class="btn-group" role="group" aria-label="Navegación de páginas">
-          <button class="btn btn-page" type="button" aria-label="Página anterior">«</button>
-          <button class="btn btn-page active" type="button" aria-current="page" aria-label="Página 1">1</button>
-          <button class="btn btn-page" type="button" aria-label="Página 2">2</button>
-          <button class="btn btn-page" type="button" aria-label="Página 3">3</button>
-          <button class="btn btn-page" type="button" aria-label="Página siguiente">»</button>
+    <section id="historia" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre la Banda</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><div class="card-custom p-4 text-center"><i class="fas fa-calendar fa-3x mb-3" style="color:var(--primary)"></i><h4>Fundación</h4><p>1984 en Montevideo, Uruguay</p></div></div>
+                <div class="col-md-4"><div class="card-custom p-4 text-center"><i class="fas fa-music fa-3x mb-3" style="color:var(--primary)"></i><h4>Género</h4><p>Rock alternativo con letras satíricas</p></div></div>
+                <div class="col-md-4"><div class="card-custom p-4 text-center"><i class="fas fa-trophy fa-3x mb-3" style="color:var(--primary)"></i><h4>Grammy Latino</h4><p>Ganadores por "Bipolar" (2009)</p></div></div>
+            </div>
+            <div class="card-custom p-5 mt-5">
+                <h3 class="text-center mb-4" style="color:var(--primary)">Historia</h3>
+                <p class="text-center lead">Cuarteto de Nos es una banda uruguaya formada en 1984, conocida por sus letras ingeniosas e irónicas. Han evolucionado desde un sonido cómico hasta un rock maduro en álbumes como "Raro" y "Bipolar", este último ganador del Grammy Latino.</p>
+                <div class="text-center mt-4"><a href="https://www.cuartetodenos.com/" target="_blank" class="btn btn-primary-custom"><i class="fas fa-globe me-2"></i>Sitio Oficial</a></div>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <section id="integrantes" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Integrantes</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6"><div class="card-custom"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Roberto_Musso_2019.jpg/400px-Roberto_Musso_2019.jpg" class="w-100" style="height:300px;object-fit:cover"><div class="p-3"><h5 style="color:var(--primary)">Roberto Musso</h5><p class="text-muted">Voz y Guitarra</p></div></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-custom"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Santiago_Tavella_2019.jpg/400px-Santiago_Tavella_2019.jpg" class="w-100" style="height:300px;object-fit:cover"><div class="p-3"><h5 style="color:var(--primary)">Santiago Tavella</h5><p class="text-muted">Bajo y Coros</p></div></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-custom"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/%C3%81lvaro_Pintos_2019.jpg/400px-%C3%81lvaro_Pintos_2019.jpg" class="w-100" style="height:300px;object-fit:cover"><div class="p-3"><h5 style="color:var(--primary)">Álvaro Pintos</h5><p class="text-muted">Batería</p></div></div></div>
+                <div class="col-lg-3 col-md-6"><div class="card-custom"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gustavo_Antu%C3%B1a_2019.jpg/400px-Gustavo_Antu%C3%B1a_2019.jpg" class="w-100" style="height:300px;object-fit:cover"><div class="p-3"><h5 style="color:var(--primary)">Gustavo Antuña</h5><p class="text-muted">Guitarra</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Videos Destacados</h2>
+            <div class="row g-4">
+                <div class="col-lg-4"><div class="card-custom"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/YQHsXMglC9A" allowfullscreen></iframe></div><div class="p-3 text-center">Cuando sea grande</div></div></div>
+                <div class="col-lg-4"><div class="card-custom"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/MEb4vJSDhvs" allowfullscreen></iframe></div><div class="p-3 text-center">Me gusta tu mente</div></div></div>
+                <div class="col-lg-4"><div class="card-custom"><div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/nLZwKzHhPKE" allowfullscreen></iframe></div><div class="p-3 text-center">Nada ha cambiado</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="discografia" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Discografía</h2>
+            <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+                <button class="btn btn-outline-warning active" onclick="filterAlbums('all')">Todos</button>
+                <button class="btn btn-outline-warning" onclick="filterAlbums('90s')">90s</button>
+                <button class="btn btn-outline-warning" onclick="filterAlbums('2000s')">2000s</button>
+                <button class="btn btn-outline-warning" onclick="filterAlbums('2010s')">2010s+</button>
+            </div>
+            <div class="row g-4" id="albums"></div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6"><div class="card-custom p-4"><form onsubmit="event.preventDefault(); alert('Mensaje enviado!');"><div class="mb-3"><input type="text" class="form-control" placeholder="Nombre" required></div><div class="mb-3"><input type="email" class="form-control" placeholder="Email" required></div><div class="mb-3"><textarea class="form-control" rows="4" placeholder="Mensaje" required></textarea></div><button class="btn btn-primary-custom w-100">Enviar</button></form></div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></div>
 
     <footer>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            <p class="mb-0">© 2025 El Cuarteto de Nos - Sitio tributo hecho con ❤️</p>
-            <p class="small text-white-50 mb-0">Todos los derechos pertenecen al Cuarteto de Nos</p>
-          </div>
-          <div class="col-md-6 text-center text-md-end footer-social">
-            <a href="https://youtube.com/@cuartetodenos" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶️</a>
-            <a href="https://www.instagram.com/cuartetodenosok/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📷</a>
-            <a href="https://www.facebook.com/cuartetodenos" target="_blank" rel="noopener noreferrer" aria-label="Facebook">👍</a>
-            <a href="https://open.spotify.com/intl-es/artist/13JJKrUewC1CJYmIDXQNoH" target="_blank" rel="noopener noreferrer" aria-label="Spotify">🎵</a>
-          </div>
+        <div class="container text-center">
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <a href="https://youtube.com/@cuartetodenos" target="_blank" class="text-white fs-3"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com/cuartetodenosok" target="_blank" class="text-white fs-3"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/cuartetodenos" target="_blank" class="text-white fs-3"><i class="fab fa-facebook"></i></a>
+                <a href="https://spotify.com/artist/13JJKrUewC1CJYmIDXQNoH" target="_blank" class="text-white fs-3"><i class="fab fa-spotify"></i></a>
+            </div>
+            <p>© 2025 Cuarteto de Nos Fan Page | Hecho con ❤️</p>
         </div>
-      </div>
     </footer>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const albums = [
+            {t:"Cuarteto de Nos",y:1994,e:"90s",i:"https://via.placeholder.com/300/f39c12/fff?text=1994"},
+            {t:"Sopa de Caracol",y:1995,e:"90s",i:"https://via.placeholder.com/300/f39c12/fff?text=1995"},
+            {t:"Volviendo a Casa",y:1996,e:"90s",i:"https://via.placeholder.com/300/f39c12/fff?text=1996"},
+            {t:"Trencito de Juguete",y:1997,e:"90s",i:"https://via.placeholder.com/300/f39c12/fff?text=1997"},
+            {t:"Otra Navidad",y:1998,e:"90s",i:"https://via.placeholder.com/300/f39c12/fff?text=1998"},
+            {t:"Revés o Derecho",y:1999,e:"90s",i:"https://via.placeholder.com/300/f39c12/fff?text=1999"},
+            {t:"Unplugged",y:2000,e:"2000s",i:"https://via.placeholder.com/300/e67e22/fff?text=2000"},
+            {t:"Instituto",y:2004,e:"2000s",i:"https://via.placeholder.com/300/e67e22/fff?text=2004"},
+            {t:"Raro",y:2006,e:"2000s",i:"images/Raro.jpg"},
+            {t:"Bipolar",y:2009,e:"2000s",i:"images/Bipolar.jpg"},
+            {t:"Porfiado",y:2012,e:"2010s",i:"images/Porfiado.jpg"},
+            {t:"Habla tu Espejo",y:2014,e:"2010s",i:"images/Habla tu espejo.jpg"},
+            {t:"Apocalipsis Zombie",y:2017,e:"2010s",i:"images/Apocalipsis Zombie.jpg"},
+            {t:"Jueves",y:2019,e:"2010s",i:"images/Jueves.jpg"}
+        ];
+        function filterAlbums(f){
+            document.getElementById('albums').innerHTML = albums.filter(a=>f==='all'||a.e===f).map((a,i)=>`<div class="col-lg-3 col-md-6"><div class="card-custom"><img src="${a.i}" class="w-100" style="height:250px;object-fit:cover" onerror="this.src='https://via.placeholder.com/300/16213e/f39c12?text=${a.t}'"><div class="p-3"><h5 style="color:var(--primary)">${a.t}</h5><p class="text-muted">${a.y}</p><a href="https://youtube.com/results?search_query=cuarteto+de+nos+${a.t.replace(/ /g,'+')}" target="_blank" class="btn btn-primary-custom btn-sm"><i class="fab fa-youtube me-1"></i>Escuchar</a></div></div></div>`).join('');
+            document.querySelectorAll('.btn-outline-warning').forEach(b=>b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        window.addEventListener('scroll',()=>{document.getElementById('scrollTop').style.display=pageYOffset>300?'flex':'none'});
+        filterAlbums('all');
+    </script>
+</body>
 </html>
